@@ -1,0 +1,28 @@
+
+
+
+
+<div *ngFor="let product of searchResults; let index = index" class="cproducts">
+    <div class="cproduct" [attr.data-key]="index">
+      <div class="cimgdiv">
+        <img [src]="product.url" [alt]="product.name" />
+      </div>
+      <div class="cinfodiv">
+        <span>{{ product.name }}</span>
+        <span>Price: ${{ product.price }}</span>
+      </div>
+      <button (click)="addtocart({
+        id: product.id, 
+        price: product.price, 
+        name: product.name, 
+        url: product.url ,
+        discription:product.discription,
+        category:product.category
+      })">Add to Cart</button>
+      <button (click)="details(product.id)">View Details</button>
+     
+    </div>
+  </div>
+  
+  <h2 *ngIf="!searchResults || searchResults.length === 0" class="empty">No search result found!</h2>
+  

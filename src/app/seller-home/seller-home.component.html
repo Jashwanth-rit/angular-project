@@ -1,0 +1,22 @@
+
+<h5 class="delmsg">{{delmsg}}</h5>
+<div *ngFor="let item of products; let index = index" class="cproducts">
+    <div class="cproduct" [attr.data-key]="index">
+      <div class="cimgdiv">
+        <img [src]="item.url" [alt]="item.name" />
+      </div>
+      <div class="cinfodiv">
+        <span>{{ item.name }}</span>
+        <span>Price: ${{ item.price }}</span>
+      </div>
+      <button (click)="delete(item.id)">
+        Dlt!!
+      </button>
+      <button (click)="update(item.id)">
+        Update!!
+      </button>
+    </div>
+  </div>
+  
+  <h2 *ngIf="!products || products.length === 0" class="empty">Your cart is empty</h2>
+  

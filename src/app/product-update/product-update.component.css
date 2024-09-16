@@ -1,0 +1,82 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for classic look */
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #333; /* Dark text for title */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25); /* Light shadow on focus */
+  }
+  
+  textarea.form-control {
+    resize: vertical;
+    min-height: 100px; /* Height for description */
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    width: 100%; /* Full width button */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .btn.bg-dark {
+    background-color: #343a40; /* Classic dark button */
+  }
+  
+  .mt-5 {
+    margin-top: 3rem !important;
+  }
+  
+  .mb-3,
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .w-90 {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .row {
+    justify-content: center;
+  }
+  
+  .regist {
+    font-weight: bold;
+    text-transform: uppercase; /* Uppercase for button text */
+  }
+  

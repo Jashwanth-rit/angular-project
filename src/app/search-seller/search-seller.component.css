@@ -1,0 +1,86 @@
+.cproduct {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out items evenly */
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px; /* Limit the width of the product container */
+    margin: 0 auto 15px; /* Center the product container and add space below */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a classic feel */
+    background-color: #f9f9f9; /* Soft background color for a classic look */
+  }
+  
+  .cimgdiv img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+    border: 1px solid #ccc; /* Slight border around the image */
+  }
+  
+  .cproducts {
+    margin-top: 20px;
+  }
+  
+  .cinfodiv {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .cinfodiv span {
+    font-size: 1.2rem;
+    color: #343a40; /* Classic dark grey color for text */
+    font-weight: bold;
+  }
+  
+  .cproduct button {
+    background-color: #f8f9fa; /* Light background for classic feel */
+    color: #343a40; /* Darker text for contrast */
+    padding: 10px 20px;
+    font-weight: 600; /* Slightly less bold for a classic look */
+    border-radius: 5px; /* Softer rounded corners */
+    border: 2px solid #343a40; /* Classic dark border */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  }
+  
+  .cproduct button:hover {
+    background-color: #343a40; /* Darker background on hover */
+    color: #f8f9fa; /* Light text on hover */
+    border-color: #f8f9fa; /* Lighter border on hover */
+  }
+  
+  .cproduct button:active {
+    background-color: #6c757d; /* Slightly different color when clicked */
+    color: #ffffff;
+    box-shadow: none; /* Remove shadow on click for a classic feel */
+  }
+  
+  .delmsg {
+    align-self: center;
+    color: green;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .empty {
+    text-align: center;
+    color: grey;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-top: 50px;
+  }
+  
+  .empty:hover {
+    color: red;
+    font-weight: bold;
+  }
+  

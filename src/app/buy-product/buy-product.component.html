@@ -1,0 +1,183 @@
+<div *ngFor="let item of products; let index = index" class="cproducts">
+  <div class="cproduct" [attr.data-key]="index">
+    <div class="cimgdiv">
+      <img [src]="item.url" [alt]="item.name" />
+    </div>
+    <div class="cinfodiv">
+      <span>{{ item.name }}</span>
+      <span>Price: ${{ item.price }}</span>
+    </div>
+    <button (click)="delete(item.id)">remove</button>
+  </div>
+</div>
+
+<div class="order-container" *ngIf="products && products.length > 0">
+  <h2 class="order-title">Order Details</h2>
+
+  <!-- User Details Section -->
+  <form #orderForm="ngForm" (ngSubmit)="submitOrder(orderForm.value)" class="order-form">
+    <!-- Name Field -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        ngModel 
+        class="form-control" 
+        placeholder="Enter your name" 
+        required 
+        minlength="3"
+        #name="ngModel" />
+      <div *ngIf="name.invalid && name.touched" class="text-danger">
+        <small *ngIf="name.errors?.['required']">Name is required.</small>
+        <small *ngIf="name.errors?.['minlength']">Name must be at least 3 characters.</small>
+      </div>
+    </div>
+
+    <!-- Phone Number Field -->
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input 
+        type="text" 
+        id="phone" 
+        name="phone" 
+        ngModel 
+        class="form-control" 
+        placeholder="Enter your phone number" 
+        required 
+        pattern="^[0-9]{10}$" 
+        #phone="ngModel" />
+      <div *ngIf="phone.invalid && phone.touched" class="text-danger">
+        <small *ngIf="phone.errors?.['required']">Phone number is required.</small>
+        <small *ngIf="phone.errors?.['pattern']">Phone number must be exactly 10 digits.</small>
+      </div>
+    </div>
+
+    <!-- Address Field -->
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea 
+        id="address" 
+        name="address" 
+        ngModel 
+        class="form-control" 
+        rows="3" 
+        placeholder="Enter your address" 
+        required 
+        minlength="10"
+        #address="ngModel"></textarea>
+      <div *ngIf="address.invalid && address.touched" class="text-danger">
+        <small *ngIf="address.errors?.['required']">Address is required.</small>
+        <small *ngIf="address.errors?.['minlength']">Address must be at least 10 characters long.</small>
+      </div>
+    </div>
+
+    <!-- Pick-up Time Field -->
+    <div class="form-group">
+      <label for="pickup-time">Pick-up Time</label>
+      <input 
+        type="time" 
+        id="pickup-time" 
+        name="pickupTime" 
+        ngModel 
+        class="form-control" 
+        required 
+        #pickupTime="ngModel" />
+      <div *ngIf="pickupTime.invalid && pickupTime.touched" class="text-danger">
+        <small>Pick-up time is required.</small>
+      </div>
+    </div>
+
+    <!-- Order Day Field -->
+    <div class="form-group">
+      <label for="order-day">Order Issuing Day</label>
+      <input 
+        type="date" 
+        id="order-day" 
+        name="orderDay" 
+        ngModel 
+        class="form-control" 
+        required 
+        #orderDay="ngModel" />
+      <div *ngIf="orderDay.invalid && orderDay.touched" class="text-danger">
+        <small>Order day is required.</small>
+      </div>
+    </div>
+
+    <!-- Payment Information -->
+    <h3 class="payment-title">Payment Details</h3>
+    <div class="form-group payment-options">
+      <label>Payment Method</label>
+      <div class="form-check">
+        <input 
+          type="radio" 
+          id="cash-on-delivery" 
+          name="paymentMethod" 
+          value="Cash on Delivery" 
+          ngModel 
+          required 
+          #paymentMethod="ngModel" />
+        <label for="cash-on-delivery">Cash on Delivery</label>
+      </div>
+      <div class="form-check">
+        <input 
+          type="radio" 
+          id="e-banking" 
+          name="paymentMethod" 
+          value="E-Banking" 
+          ngModel 
+          required />
+        <label for="e-banking">E-Banking</label>
+      </div>
+      <div class="form-check">
+        <input 
+          type="radio" 
+          id="upi-payment" 
+          name="paymentMethod" 
+          value="UPI Payment" 
+          ngModel 
+          required />
+        <label for="upi-payment">UPI Payment</label>
+      </div>
+      <div *ngIf="paymentMethod.invalid && paymentMethod.touched" class="text-danger">
+        <small>Payment method is required.</small>
+      </div>
+    </div>
+
+    <!-- Bill Section -->
+    <h3 class="bill-title">Bill Summary</h3>
+    <div class="bill">
+      <div class="bill-item">
+        <span>Total Cost:</span>
+        <span>{{ totalcost | currency }}</span>
+      </div>
+      <div class="bill-item">
+        <span>Tax (10%):</span>
+        <span>{{ totalcost * 0.1 | currency }}</span>
+      </div>
+      <div class="bill-item">
+        <span>Discount:</span>
+        <span>{{ totalcost * 0.01 | currency }}</span>
+      </div>
+      <div class="bill-item">
+        <span>Delivery Charge:</span>
+        <span>{{ deliveryCharge | currency }}</span>
+      </div>
+      <div class="bill-item total">
+        <span>Final Amount:</span>
+        <span>{{ finalAmount | currency }}</span>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group button-group">
+      <button type="submit" class="submit-btn" [disabled]="orderForm.invalid">Place Order</button>
+      <button type="button" class="submit-btn cancel-btn" (click)="gotohome()">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<div class="cproduct">
+  <button *ngIf="!products || products.length === 0" class="empty" (click)="gotohome()">Shop Now!</button>
+</div>

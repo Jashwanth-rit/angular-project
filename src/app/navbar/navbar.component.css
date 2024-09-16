@@ -1,0 +1,128 @@
+/* Navbar branding */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  margin-left: 15px;
+}
+
+/* Navbar padding */
+.navbar {
+  padding: 1rem 2rem;
+}
+
+/* Make search bar occupy full width on smaller screens */
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Position the menu items to the right */
+.menu {
+  margin-left: auto;
+}
+
+/* Responsive behavior */
+@media (max-width: 992px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .search {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .search {
+    width: auto;
+    margin: 0;
+  }
+}
+
+/* Make sure the navbar is fully responsive */
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: block;
+    text-align: center;
+  }
+  .menu {
+    position: static;
+  }
+}
+
+/* Styling for the search box and results dropdown */
+.search {
+  position: relative;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-results ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search-results li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.search-results li:hover {
+  background-color: #f8f9fa;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+/* General navbar styling */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+}
+
+.menu-content {
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure that the menu adjusts well on different screen sizes */
+@media (max-width: 768px) {
+  .menu-content {
+    flex-direction: column;
+  }
+}
+
+.search {
+  flex-grow: 1;
+}
+
+.search input {
+  width: 300px;
+}

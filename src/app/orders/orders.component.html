@@ -1,0 +1,52 @@
+<div class="order-container">
+    <h2 class="order-title">Your Orders</h2>
+    <div *ngFor="let order of orders; let i = index" class="order-details">
+      
+      <h3>Order {{ i + 1 }}</h3>
+      
+      <!-- User Details -->
+      <div class="user-details">
+        <p><strong>Name:</strong> {{ order.userDetails.name }}</p>
+        <p><strong>Phone:</strong> {{ order.userDetails.phone }}</p>
+        <p><strong>Address:</strong> {{ order.userDetails.address }}</p>
+        <p><strong>Pickup Time:</strong> {{ order.userDetails.pickupTime }}</p>
+        <p><strong>Order Day:</strong> {{ order.userDetails.orderDay }}</p>
+        <p><strong>Payment Method:</strong> {{ order.userDetails.paymentMethod }}</p>
+      </div>
+      
+      <!-- Products -->
+      <div class="products">
+        <h4>Products Ordered:</h4>
+        <div *ngFor="let product of order.products" class="product-item">
+          <img [src]="product.url" [alt]="product.name" />
+          <div class="product-info">
+            <p><strong>{{ product.name }}</strong></p>
+            <p>Price: ${{ product.price }}</p>
+            <p>{{ product.discription }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bill Details -->
+      <div class="bill-details">
+        <h4>Bill Summary:</h4>
+        <div class="bill-summary">
+          <p><span>Total Cost:</span> {{ order.billDetails.totalCost | currency }}</p>
+          <p><span>Tax:</span> {{ order.billDetails.tax | currency }}</p>
+          <p><span>Discount:</span> {{ order.billDetails.discount | currency }}</p>
+          <p><span>Delivery Charge:</span> {{ order.billDetails.deliveryCharge | currency }}</p>
+          <p class="final-amount"><span>Final Amount:</span> {{ order.billDetails.finalAmount | currency }}</p>
+        </div>
+      </div>
+  
+      <!-- Cancel Button -->
+      <div class="button-group">
+        <button (click)="cancelOrder(order.id)" class="cancel-btn">Cancel Order</button>
+      </div>
+  
+    </div>
+  </div>
+  <div *ngIf="!orders || orders.length === 0"  class="cproduct" style="display: flex;justify-content: center;flex-direction: column;">
+    <h2 *ngIf="!orders || orders.length === 0"  class="empty">Your cart is empty '-'</h2>
+    <button *ngIf="!orders || orders.length === 0" class="empty" (click)="gotohome()">shop Now!</button>  
+    </div>

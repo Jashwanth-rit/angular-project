@@ -1,0 +1,37 @@
+<div class="carousel-container">
+    <ngb-carousel *ngIf="carousel?.length">
+        <ng-template ngbSlide *ngFor="let item of carousel">
+            <div class="picsum-img-wrapper">
+                <img [src]="item.url" alt="{{item.name}}" />
+            </div>
+            <div class="carousel-caption">
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.discription }}</p>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
+
+<div class="products">
+  <div class="product" *ngFor="let product of products">
+    <div class="imgdiv">
+      <img [src]="product.url" [alt]="product.name" />
+    </div>
+    <div class="infodiv">
+      <span class="product-name">{{ product.name }}</span>
+      <span class="product-price">Price: ${{ product.price }}</span>
+      <p class="product-description">{{ product.discription }}</p>
+      <div class="product-buttons">
+        <button (click)="addtocart({
+          id: product.id, 
+          price: product.price, 
+          name: product.name, 
+          url: product.url,
+          discription: product.discription,
+          category: product.category
+        })">Add to Cart</button>
+        <button (click)="details(product.id)">View Details</button>
+      </div>
+    </div>
+  </div>
+</div>

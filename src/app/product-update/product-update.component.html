@@ -1,0 +1,99 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center mb-4">UPDATE PRODUCT</h2>
+       
+        <form #products="ngForm" (ngSubmit)="update(products.value)">
+  
+          <div class="mb-3">
+            <label for="id" class="form-label">Product-ID</label>
+            <input ngModel
+              [(ngModel)]="product.id"
+              type="text"
+              id="id"
+              name="id"
+              class="form-control"
+              placeholder="Enter Id"
+              required
+              readonly  
+            />
+          </div>
+  
+          <!-- Name Field -->
+          <div class="mb-3">
+            <label for="name" class="form-label">Product-Name</label>
+            <input ngModel
+              [(ngModel)]="product.name"
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Enter name"
+              required
+            />
+          </div>
+  
+          <!-- Price Field -->
+          <div class="mb-3">
+            <label for="price" class="form-label">Product-Price</label>
+            <input ngModel
+              [(ngModel)]="product.price"
+              type="text"
+              id="price"
+              name="price"
+              class="form-control"
+              placeholder="Enter price"
+              required
+            />
+          </div>
+  
+          <!-- URL Field -->
+          <div class="mb-3">
+            <label for="url" class="form-label">Product-Url</label>
+            <input ngModel
+              [(ngModel)]="product.url"
+              type="text"
+              id="url"
+              name="url"
+              class="form-control"
+              placeholder="Enter url"
+              required
+            />
+          </div>
+  
+          <!-- Description Field -->
+          <div class="mb-3">
+            <label for="discription" class="form-label">Product-Description</label>
+            <textarea ngModel
+              [(ngModel)]="product.discription"
+              id="discription"
+              name="discription"
+              class="form-control"
+              placeholder="Enter description"
+              required
+            ></textarea>
+          </div>
+  
+          <!-- Category Field -->
+          <div class="mb-4">
+            <label for="category" class="form-label">Product-Category</label>
+            <input ngModel
+              [(ngModel)]="product.category"
+              type="text"
+              id="category"
+              name="category"
+              class="form-control"
+              placeholder="Enter category"
+              required
+            />
+          </div>
+  
+          <!-- Submit Button -->
+          <div>
+            <button type="submit" class="btn bg-dark regist w-90">UPDATE</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

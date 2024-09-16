@@ -1,0 +1,100 @@
+.carousel-container {
+    width: 100%;
+    max-width: 1200px; /* Set a max width for the carousel */
+    margin: 0 auto;
+    margin-top: 20px; /* Center the carousel */
+  }
+  
+  .picsum-img-wrapper {
+    text-align: center; /* Center the image horizontally */
+  }
+  
+  .picsum-img-wrapper img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain the aspect ratio */
+    max-height: 500px; /* Set a maximum height for the image */
+    object-fit: cover; /* Ensures the image covers the entire container without distortion */
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-left: 100px;
+    margin-top: 50px;
+  }
+  
+  .product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: calc(25% - 20px); /* 4 products in one row */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure buttons are at the bottom */
+  }
+  
+  .imgdiv img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .infodiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .product-name {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .product-price {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .product-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .product-buttons {
+    margin-top: auto; /* Push buttons to the bottom */
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .product-buttons button {
+    background-color: #f8f9fa; /* Light background for classic feel */
+    color: #343a40; /* Darker text for contrast */
+    padding: 10px 20px;
+    font-weight: 600; /* Slightly less bold for a classic look */
+    border-radius: 5px; /* Softer rounded corners */
+    border: 2px solid #343a40; /* Classic dark border */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  }
+  
+  .product-buttons button:hover {
+    background-color: #343a40; /* Darker background on hover */
+    color: #f8f9fa; /* Light text on hover */
+    border-color: #f8f9fa; /* Lighter border on hover */
+  }
+  
+  .product-buttons button:active {
+    background-color: #6c757d; /* Slightly different color when clicked */
+    color: #ffffff;
+    box-shadow: none; /* Remove shadow on click for classic feel */
+  }
+  

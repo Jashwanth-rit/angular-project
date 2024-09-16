@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">E-commerce</a>
+
+    <div class="search">
+      <form class="d-flex ms-auto" (submit)="onSearch($event)">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          [(ngModel)]="searchQuery"
+          name="searchQuery"
+          (keyup)="searchproduct()"
+          (blur)="hidesearch()"
+        />
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+
+      <!-- Search Results Dropdown -->
+      <div *ngIf="searchResults.length > 0" class="search-results" >
+        <ul>
+          <li *ngFor="let product of searchResults">
+            {{ product.name }} - ${{ product.price }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="menu ms-auto">
+      <!-- Menu based on role -->
+      <div [ngSwitch]="menutype" class="menu-content">
+        <!-- Default Menu -->
+        <ul *ngSwitchCase="'default'" class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="seller" routerLinkActive="active">Seller</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="user-login" routerLinkActive="active">User</a>
+          </li>
+        </ul>
+
+        <!-- Seller Menu -->
+        <ul *ngSwitchCase="'seller'" class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="user-login" routerLinkActive="active">User</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="seller-home" routerLinkActive="active">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="seller-add" routerLinkActive="active">Add Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout ({{ sellername }})</a>
+          </li>
+        </ul>
+
+        <!-- User Menu -->
+        <ul *ngSwitchCase="'user'" class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="seller" routerLinkActive="active">Seller</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="" routerLinkActive="active">User Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="orders" routerLinkActive="active">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="userlogout()">Logout ({{ username }})</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="cart" routerLinkActive="active">Cart ({{cartlength}})</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="buy" routerLinkActive="active">$Buy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

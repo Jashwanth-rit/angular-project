@@ -1,0 +1,204 @@
+.product-details-container {
+  display: flex;
+  flex-direction: column; /* Change to column for better stacking */
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: #ffffff;
+  font-family: 'Arial', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .product-details-container {
+    flex-direction: row; /* Switch to row layout for wider screens */
+  }
+}
+
+.product-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 400px; /* Limit width of the image */
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.product-info {
+  flex: 1;
+  padding: 20px;
+  max-width: 600px; /* Limit the width of product info */
+  margin-top: 20px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .product-info {
+    margin-top: 0; /* Remove top margin on wider screens */
+    margin-left: 20px; /* Add spacing between image and info */
+  }
+}
+
+.product-info h1 {
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-info .price {
+  font-size: 1.75rem;
+  color: #27ae60;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.product-info .description,
+.product-info .category {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.product-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px; /* Add space between info and buttons */
+}
+
+.product-buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.back-button {
+  background-color: #6c757d;
+}
+
+.back-button:hover {
+  background-color: #343a40;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.picsum-img-wrapper {
+  text-align: center;
+}
+
+.picsum-img-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 450px;
+  border-radius: 5px;
+}
+
+
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-left: 100px;
+    margin-top: 50px;
+  }
+  
+  .product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: calc(25% - 20px); /* 4 products in one row */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure buttons are at the bottom */
+  }
+  
+  .imgdiv img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .infodiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .product-name {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .product-price {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .product-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .product-buttons {
+    margin-top: auto; /* Push buttons to the bottom */
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .product-buttons button {
+    background-color: #f8f9fa; /* Light background for classic feel */
+    color: #343a40; /* Darker text for contrast */
+    padding: 10px 20px;
+    font-weight: 600; /* Slightly less bold for a classic look */
+    border-radius: 5px; /* Softer rounded corners */
+    border: 2px solid #343a40; /* Classic dark border */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  }
+  
+  .product-buttons button:hover {
+    background-color: #343a40; /* Darker background on hover */
+    color: #f8f9fa; /* Light text on hover */
+    border-color: #f8f9fa; /* Lighter border on hover */
+  }
+  
+  .product-buttons button:active {
+    background-color: #6c757d; /* Slightly different color when clicked */
+    color: #ffffff;
+    box-shadow: none; /* Remove shadow on click for classic feel */
+  }
+  

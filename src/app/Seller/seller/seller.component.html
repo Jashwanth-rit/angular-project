@@ -1,0 +1,147 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <!-- Sign-up form -->
+    <div *ngIf="!showlogin" class="col-md-6">
+      <h2 class="text-center mb-4">Sign-up Here!</h2>
+      <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp)" novalidate>
+        <!-- Name Field -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            ngModel
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            placeholder="Enter your name"
+            required
+            minlength="4"
+            #name="ngModel"
+          />
+          <!-- Name validation -->
+          <div *ngIf="name.invalid && name.touched" class="text-danger">
+            <small *ngIf="name.errors?.['required']">Name is required.</small>
+            <small *ngIf="name.errors?.['minlength']">Name must be more than 3 characters.</small>
+          </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            ngModel
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter your email"
+            required
+            email
+            #email="ngModel"
+          />
+          <!-- Email validation -->
+          <div *ngIf="email.invalid && email.touched" class="text-danger">
+            <small *ngIf="email.errors?.['required']">Email is required.</small>
+            <small *ngIf="email.errors?.['email']">Invalid email format.</small>
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            ngModel
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Enter your password"
+            required
+            #password="ngModel"
+          />
+          <!-- Password validation -->
+          <div *ngIf="password.invalid && password.touched" class="text-danger">
+            <small *ngIf="password.errors?.['required']">Password is required.</small>
+            <small *ngIf="password.errors?.['passwordStrength']">
+              Password must be at least 8 characters long, contain one uppercase letter, one number, and one special character.
+            </small>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="btndiv">
+          <button
+            type="submit"
+            class="btn bg-dark regist w-100"
+            [disabled]="sellerSignUp.invalid"
+          >
+            Register
+          </button>
+          <button type="button" class="btn bg-dark regist w-100" (click)="toggle('log')">Login</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Login form -->
+    <div *ngIf="showlogin" class="col-md-6">
+      <h2 class="text-center mb-4">Login Here!</h2>
+      <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin)" novalidate>
+        <p style="color: red;">*{{authError}}</p>
+
+        <!-- Email Field -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            ngModel
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter your email"
+            required
+            email
+            #email="ngModel"
+          />
+          <div *ngIf="email.invalid && email.touched" class="text-danger">
+            <small *ngIf="email.errors?.['required']">Email is required.</small>
+            <small *ngIf="email.errors?.['email']">Invalid email format.</small>
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            ngModel
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Enter your password"
+            required
+            #password="ngModel"
+          />
+          <!-- Password validation -->
+          <div *ngIf="password.invalid && password.touched" class="text-danger">
+            <small *ngIf="password.errors?.['required']">Password is required.</small>
+            <small *ngIf="password.errors?.['passwordStrength']">
+              Password must be at least 8 characters long, contain one uppercase letter, one number, and one special character.
+            </small>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="btndiv">
+          <button
+            type="submit"
+            class="btn bg-dark regist w-100"
+            [disabled]="sellerLogin.invalid"
+          >
+            Login
+          </button>
+          <button type="button" class="btn bg-dark regist w-100" (click)="toggle('sign')">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
