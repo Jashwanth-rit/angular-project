@@ -17,13 +17,19 @@
       "name": "Jaya",
       "email": "jk.karunadu01@gmail.com",
       "password": "Jk@karunadu01"
+    },
+    {
+      "id": "fdaf",
+      "name": "jashwanth",
+      "email": "jk.karunadu01@gmail.com",
+      "password": "Jk@karunadu01"
     }
   ],
   "products": [
     {
       "id": "1",
       "name": "laptops",
-      "price": "40000",
+      "price": "400000",
       "url": "https://wallpapers.com/images/featured/laptop-murjp1nk4lp1idlt.webp",
       "discription": "laptops for sale",
       "category": "laptop"
@@ -193,6 +199,12 @@
       "name": "Jaya",
       "email": "jk.karunadu01@gmail.com",
       "password": "Jk@karunadu01"
+    },
+    {
+      "id": "503e",
+      "name": "Jashwanth",
+      "email": "jk.karunadu01@gmail.com",
+      "password": "1234"
     }
   ],
   "order": [],
@@ -230,40 +242,6 @@
       "category": "grocery"
     }
   ],
-  "cart": [
-    {
-      "id": "2",
-      "price": "500",
-      "name": "I-phone",
-      "url": "https://imgs.search.brave.com/IFDUdqwXGkgBmvU0XAuYO8xp_1QRXQAmRLbg5xVLbXM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdHls/ZXMucmVkZGl0bWVk/aWEuY29tL3Q1XzRz/N2k3ai9zdHlsZXMv/Y29tbXVuaXR5SWNv/bl9zcmRkdGZidTJk/bWIxLmpwZWc_Zm9y/bWF0PXBqcGcmcz1m/NzE1NDJiYTlkYmVh/YzkzYjRhZGEzOGQx/MjY1MzdkZjEyZGVj/MjM0",
-      "discription": "i-Phone for sale!!",
-      "category": "phone"
-    },
-    {
-      "id": "6",
-      "price": "5000",
-      "name": "one-plus",
-      "url": "https://media.gettyimages.com/id/1237093573/photo/a-oneplus-9-pro-smartphone-taken-on-april-19-2021.jpg?s=612x612&w=0&k=20&c=itO6IuvbPY5XySd9SW_m6pFCIUFlBQztjM7BiPnbuAM=",
-      "discription": "one-plus - most reputated phones",
-      "category": "phone"
-    }
-  ],
-  "buy": [
-    {
-      "id": "2",
-      "price": "500",
-      "name": "I-phone",
-      "url": "https://imgs.search.brave.com/IFDUdqwXGkgBmvU0XAuYO8xp_1QRXQAmRLbg5xVLbXM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdHls/ZXMucmVkZGl0bWVk/aWEuY29tL3Q1XzRz/N2k3ai9zdHlsZXMv/Y29tbXVuaXR5SWNv/bl9zcmRkdGZidTJk/bWIxLmpwZWc_Zm9y/bWF0PXBqcGcmcz1m/NzE1NDJiYTlkYmVh/YzkzYjRhZGEzOGQx/MjY1MzdkZjEyZGVj/MjM0",
-      "discription": "i-Phone for sale!!",
-      "category": "phone"
-    },
-    {
-      "id": "2",
-      "price": "500",
-      "name": "I-phone",
-      "url": "https://imgs.search.brave.com/IFDUdqwXGkgBmvU0XAuYO8xp_1QRXQAmRLbg5xVLbXM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdHls/ZXMucmVkZGl0bWVk/aWEuY29tL3Q1XzRz/N2k3ai9zdHlsZXMv/Y29tbXVuaXR5SWNv/bl9zcmRkdGZidTJk/bWIxLmpwZWc_Zm9y/bWF0PXBqcGcmcz1m/NzE1NDJiYTlkYmVh/YzkzYjRhZGEzOGQx/MjY1MzdkZjEyZGVj/MjM0",
-      "discription": "i-Phone for sale!!",
-      "category": "phone"
-    }
-  ]
+  "cart": [],
+  "buy": []
 }
